@@ -1,23 +1,30 @@
 import React from 'react';
-import img1 from './images/brena.png';
-import {AiTwotoneStar} from 'react-icons/ai';
+import {AiTwotoneStar, AiFillYoutube} from 'react-icons/ai';
+import Button from './Button';
 
 
-const OneSong = () => {
+
+const OneSong = ({song, onClick}) => {
+
+  // function add(title){
+  //   console.log("add" + title);
+  // }
+
   return <div className='card'>
     <img className='img-left' 
-     src={img1}
+     src={song.img}
      alt='Slika'
     /> 
     <div className='card-body'>
-      <h3 className='song-title'> Lepa Brena</h3>
-      <p className='song-singer'>Hajde da se volimo</p>
-      <p>Trajanje: 2:57</p>
-      <button>
+      <h3 className='song-title'> {song.title}</h3>
+      <p className='song-singer'> {song.singer}</p>
+      <p className='song-duration'>Trajanje: {song.duration}</p>
+      {/* <button>
        <AiTwotoneStar />
-      </button>
+      </button> */}
+      <Button text={"Dodaj u omiljene"}  onClick={onClick}/>
       <hr />
-      <a className='song-link' href="https://www.youtube.com/watch?v=IcgwXSfJ7Bg"> Link</a>
+      <a className='song-link' href={song.link}> <AiFillYoutube/>  Link</a>
       
     </div>
     

@@ -1,20 +1,12 @@
 import React from 'react';
 import OneSong from './OneSong';
 
-const Songs = () => {
+const Songs = ({songs, onClick}) => {
   return <div className='all-songs'>
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
-  <OneSong />
+  {songs.map((s)=>(
+
+   <OneSong song={s} key={s.id}  onClick={onClick}/>
+  ))};
 
   </div>;
 };

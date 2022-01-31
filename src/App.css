@@ -1,3 +1,14 @@
+.song-duration{
+  font-size: small;
+  font-style: italic;
+
+}
+
+.song-title{
+font-size: large;
+
+}
+
 .navBar {
   display: flex;
   flex-direction: row;
@@ -38,12 +49,17 @@ a:hover{
   border-color: rgb(211, 211, 211);
   border-radius: 10px;
   max-width: 200px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .img-left{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.card:hover{
+  box-shadow: 3px 3px 10px 10px rgb(107, 173, 107);
 }
 
 .all-songs {

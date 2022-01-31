@@ -7,7 +7,7 @@ function NavBar() {
   return <div className="navBar">
       <a className='active'>All songs</a>
       <div className='cart-items'>
-          <a className='active' href=""> <MdStarPurple500/> Favorite</a>
+          <a className='active' href=""> <MdStarPurple500/> Favorites</a>
           {/* <p className='cart-num' >0</p> */}
       </div>
       
