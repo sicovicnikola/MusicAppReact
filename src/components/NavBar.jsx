@@ -1,13 +1,14 @@
 import React from 'react';
-import {MdStarPurple500} from 'react-icons/md'
+import {MdStarPurple500} from 'react-icons/md';
+import {Link} from 'react-router-dom';
 
 function NavBar() {
 
 
   return <div className="navBar">
-      <a className='active'>All songs</a>
+      <Link  to='/' className='active'>All songs</Link>
       <div className='cart-items'>
-          <a className='active' href=""> <MdStarPurple500/> Favorites</a>
+          <Link to='/favorites' className='active' > <MdStarPurple500/> Favorites</Link>
           {/* <p className='cart-num' >0</p> */}
       </div>
       

@@ -5,7 +5,7 @@ const Songs = ({songs, onClick}) => {
   return <div className='all-songs'>
   {songs.map((s)=>(
 
-   <OneSong song={s} key={s.id}  onClick={onClick}/>
+   <OneSong song={s} key={s.id}  onClick={onClick} inFavorite={0}/>
   ))};
 
   </div>;

@@ -9,10 +9,12 @@ import img4 from './components/images/lukas.png';
 import img5 from './components/images/corona.png';
 import img6 from './components/images/zlatnodete.png';
 import img7 from './components/images/2bona.png';
+import Favorite from './components/Favorite';
+import {BrowserRouter, Routes, Route, Lonk} from 'react-router-dom'
 
 function App() {
 
-
+  const[favoriteSongs,setFavoritesSongs] = useState([]);
   const [songs] = useState([
   {
     id: 1,
@@ -86,18 +88,55 @@ function App() {
 
   ]);
 
-  function metoda(title){
-    console.log("metoda" + title)
+  // function metoda(title){
+  //   console.log("metoda" + title)
+  // }
+
+  function refresh(){
+    let newArray = songs.filter((s) => s.isFavorite === 1);
+    setFavoritesSongs(newArray);
+  }
+
+  function refreshRemove(){
+    let newArray = favoriteSongs.filter((s) => s.isFavorite === 1);
+    setFavoritesSongs(newArray);
+  }
+
+  function addSong(id){
+    songs.forEach((s) => {
+      if (s.id === id) {
+        s.isFavorite=1;
+      }
+    });
+    refresh();
+
+  }
+
+  function removeSong(id){
+    
+    favoriteSongs.forEach((s) => {
+      if(s.id === id) { 
+        var index = favoriteSongs.indexOf(s);
+        s.isFavorite=0;
+        delete favoriteSongs[index];
+        
+      }
+    });
+    refreshRemove();
   }
 
  const prom = <h1>pozdrav</h1>
 
   return (
-    <div className="App">
+    <BrowserRouter className="App">
      <NavBar />
-     <Songs songs={songs} onClick={metoda} />
+     <Routes>
+       <Route path="/" element={<Songs songs={songs} onClick={addSong} />}/>
+       <Route path="/favorites" element={<Favorite songs={favoriteSongs} onClick={removeSong}/>} />
+     </Routes>
      
-    </div>
+     
+    </BrowserRouter>
   );
 }
 

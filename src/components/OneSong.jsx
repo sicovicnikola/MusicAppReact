@@ -4,7 +4,7 @@ import Button from './Button';
 
 
 
-const OneSong = ({song, onClick}) => {
+const OneSong = ({song, onClick, inFavorite}) => {
 
   // function add(title){
   //   console.log("add" + title);
@@ -18,13 +18,18 @@ const OneSong = ({song, onClick}) => {
     <div className='card-body'>
       <h3 className='song-title'> {song.title}</h3>
       <p className='song-singer'> {song.singer}</p>
-      <p className='song-duration'>Trajanje: {song.duration}</p>
-      {/* <button>
-       <AiTwotoneStar />
-      </button> */}
-      <Button text={"Dodaj u omiljene"}  onClick={onClick}/>
+      
+      {inFavorite===1 ? <><p className='song-duration'>Trajanje: {song.duration}</p>
+      <Button text={"Izbriši iz omiljenih"}  onClick={()=>onClick(song.id)} inFav={1}/>
       <hr />
       <a className='song-link' href={song.link}> <AiFillYoutube/>  Link</a>
+      </> :
+      <>
+      <Button text={"Dodaj u omiljene"}  onClick={()=>onClick(song.id)} inFav={0}/>
+      <hr />
+      <a className='song-link' href={song.link}> <AiFillYoutube/>  Link</a></>
+      }
+      
       
     </div>
     

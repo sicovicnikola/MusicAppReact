@@ -1,3 +1,14 @@
+.favorite-title{
+  text-align: center;
+  color: #7c795d; 
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 28px; 
+  font-weight: 400;
+  line-height: 32px; 
+   margin: 8px 8px 0px; 
+}
+
+
 .song-duration{
   font-size: small;
   font-style: italic;
@@ -18,7 +29,7 @@ font-size: large;
   border-bottom-color: rgb(175, 175, 175);
   align-items: center;
   min-height: 40px;
-  padding-left: 750px;
+  padding-left: 850px;
   font-size: large;
  
 }
@@ -51,6 +62,17 @@ a:hover{
   max-width: 200px;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+
+.card-favorite{
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(211, 211, 211);
+    border-radius: 10px;
+    max-width: 200px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  
 }
 
 .img-left{
