@@ -2,13 +2,13 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Songs from './components/Songs';
 import {useState} from "react";
-import img1 from './components/images/brena.png';
-import img2 from './components/images/seka.png';
-import img3 from './components/images/tina.png';
-import img4 from './components/images/lukas.png';
-import img5 from './components/images/corona.png';
-import img6 from './components/images/zlatnodete.png';
-import img7 from './components/images/2bona.png';
+import img1 from './images/brena.png';
+import img2 from './images/seka.png';
+import img3 from './images/tina.png';
+import img4 from './images/lukas.png';
+import img5 from './images/corona.png';
+import img6 from './images/zlatnodete.png';
+import img7 from './images/2bona.png';
 import Favorite from './components/Favorite';
 import {BrowserRouter, Routes, Route, Lonk} from 'react-router-dom'
 
@@ -18,16 +18,16 @@ function App() {
   const [songs] = useState([
   {
     id: 1,
-    title: "Hajde, Hajde",
+    title: "Jugoslovenka",
     singer: "Lepa Brena",
-    duration: "2:57",
-    link: "https://www.youtube.com/watch?v=IcgwXSfJ7Bg",
+    duration: "4:09",
+    link: "https://www.youtube.com/watch?v=gsKn5KX6XnU",
     img: img1,
     isFavorite: 0
   },
   {
     id: 2,
-    title: "Crno i zlatnu",
+    title: "Crnu i zlatnu",
     singer: "Seka Aleksić",
     duration: "3:57",
     link: "https://www.youtube.com/watch?v=_SKe5AsjV1k",
