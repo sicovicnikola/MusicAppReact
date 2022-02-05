@@ -1,10 +1,11 @@
 import React from 'react';
 import {AiTwotoneStar, AiFillYoutube} from 'react-icons/ai';
+import {ImFileText} from 'react-icons/im'
 import Button from './Button';
 
 
 
-const OneSong = ({song, onClick, inFavorite}) => {
+const OneSong = ({song, onClick, inFavorite, addText}) => {
 
   // function add(title){
   //   console.log("add" + title);
@@ -21,7 +22,11 @@ const OneSong = ({song, onClick, inFavorite}) => {
       
       {inFavorite===1 ? <><p className='song-duration'>Trajanje: {song.duration}</p>
       <Button text={"Izbriši iz omiljenih"}  onClick={()=>onClick(song.id)} inFav={1} className={"btn"}/>
-      <hr />
+      
+      <button  type='submit' className='btn-text' onClick={()=>addText(song.id)}>
+       <ImFileText/> Učitaj tekst
+      </button>
+      <hr/>
       <a className='song-link' href={song.link}> <AiFillYoutube/>  Link</a>
       </> :
       <>
